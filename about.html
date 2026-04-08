@@ -1,265 +1,567 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Giancarlo Banchi</title>
+  <meta name="description" content="Learn about Giancarlo Banchi's background, project management methodology, and the tools he uses to lead complex delivery work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GIANCARLO BANCHI | ARCHITEXT</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-tertiary-fixed-variant": "#483c81",
-              "surface-dim": "#dbd9dd",
-              "secondary-container": "#fcd400",
-              "outline": "#747878",
-              "primary-fixed-dim": "#c8c6c5",
-              "surface-container-high": "#e9e7ec",
-              "inverse-on-surface": "#f2f0f4",
-              "surface-container-highest": "#e3e2e6",
-              "surface-variant": "#e3e2e6",
-              "surface-tint": "#5f5e5e",
-              "surface": "#faf9fd",
-              "inverse-primary": "#c8c6c5",
-              "secondary-fixed": "#ffe16d",
-              "surface-container-lowest": "#ffffff",
-              "on-tertiary-fixed": "#1c0b54",
-              "on-background": "#1b1b1f",
-              "tertiary-fixed": "#e6deff",
-              "on-surface": "#1b1b1f",
-              "surface-container": "#efedf1",
-              "secondary-fixed-dim": "#e9c400",
-              "tertiary-container": "#1c0b54",
-              "on-surface-variant": "#444748",
-              "on-secondary-container": "#6e5c00",
-              "background": "#faf9fd",
-              "on-secondary-fixed-variant": "#544600",
-              "surface-container-low": "#f5f3f7",
-              "on-error-container": "#93000a",
-              "secondary": "#705d00",
-              "on-primary": "#ffffff",
-              "on-primary-container": "#858383",
-              "primary-fixed": "#e5e2e1",
-              "tertiary-fixed-dim": "#cabeff",
-              "error": "#ba1a1a",
-              "tertiary": "#000000",
-              "on-primary-fixed": "#1c1b1b",
-              "on-secondary-fixed": "#221b00",
-              "on-error": "#ffffff",
-              "error-container": "#ffdad6",
-              "surface-bright": "#faf9fd",
-              "primary-container": "#1c1b1b",
-              "on-secondary": "#ffffff",
-              "inverse-surface": "#2f3034",
-              "on-tertiary-container": "#867ac4",
-              "primary": "#000000",
-              "on-tertiary": "#ffffff",
-              "on-primary-fixed-variant": "#474746",
-              "outline-variant": "#c4c7c7"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Space Grotesk"],
-              "label": ["Space Grotesk"]
-            },
-            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #faf9fd;
-        }
-        .grid-blueprint {
-            background-size: 40px 40px;
-            background-image: radial-gradient(circle, #747878 1px, transparent 1px);
-            background-attachment: fixed;
-        }
-    </style>
+    :root {
+      --bg:         #F4F1EB;
+      --ink:        #1A1917;
+      --ink-mid:    #504E4B;
+      --ink-light:  #9A958F;
+      --accent:     #1D3557;
+      --rule:       #D8D3CB;
+      --white:      #FDFCFA;
+      --hover-bg:   #EDE9E2;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+
+      --nav-h: 60px;
+      --pad: clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--pad);
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--ink); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: calc(var(--nav-h) + 4rem) var(--pad) 3.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.6s 0.2s forwards;
+    }
+
+    .page-header h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    /* ── BODY LAYOUT ── */
+    .about-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    /* ── BIO ── */
+    .bio-section {
+      padding: 5rem var(--pad);
+      border-bottom: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+      max-width: 80px;
+    }
+
+    .bio-lead {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .bio-body {
+      font-size: 0.92rem;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    .bio-body p + p { margin-top: 1.2rem; }
+
+    /* ── FAST FACTS ── */
+    .facts-section {
+      padding: 5rem var(--pad);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .facts-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .fact-item:first-child { border-top: 1px solid var(--rule); }
+
+    .fact-label {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    .fact-value {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-section {
+      padding: 5rem var(--pad);
+      border-bottom: 1px solid var(--rule);
+      grid-column: 1 / -1;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 1px solid var(--rule);
+    }
+
+    .philosophy-card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--rule);
+      transition: background 0.25s;
+    }
+
+    .philosophy-card:last-child { border-right: none; }
+    .philosophy-card:hover { background: var(--hover-bg); }
+
+    .phil-num {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--ink-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .phil-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .phil-body {
+      font-size: 0.86rem;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+
+    /* ── SKILLS ── */
+    .skills-section {
+      padding: 5rem var(--pad);
+      border-bottom: 1px solid var(--rule);
+      grid-column: 1 / -1;
+    }
+
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      margin-top: 2.5rem;
+    }
+
+    .skills-group h3 {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .skills-group ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .skills-group li {
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .skills-group li::before {
+      content: '—';
+      color: var(--rule);
+      font-size: 0.7rem;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 5rem var(--pad);
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-text p {
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+    }
+
+    .btn {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid;
+      transition: background 0.25s, color 0.25s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .footer-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .about-main { grid-template-columns: 1fr; }
+      .bio-section { border-right: none; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .philosophy-card { border-right: none; border-bottom: 1px solid var(--rule); }
+      .philosophy-card:last-child { border-bottom: none; }
+    }
+  </style>
 </head>
-<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full border-b-2 border-black dark:border-white bg-[#faf9fd]/80 backdrop-blur-md z-50 flex justify-between items-center px-6 py-4">
-<a href="index.html" class="text-2xl font-black text-black tracking-tighter">ARCHITEXT</a>
-<div class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] font-bold uppercase tracking-tighter text-sm">
-<a class="text-black/60 hover:bg-black hover:text-white transition-colors duration-100 px-2" href="projects.html">Work</a>
-<a class="text-black underline decoration-4 underline-offset-8" href="about.html">About</a>
-<a class="text-black/60 hover:bg-black hover:text-white transition-colors duration-100 px-2" href="#">ES</a>
-<a class="text-black/60 hover:bg-black hover:text-white transition-colors duration-100 px-2" href="#">IT</a>
-<a class="text-black/60 hover:bg-black hover:text-white transition-colors duration-100 px-2" href="#">EN</a>
-</div>
-<button class="bg-black text-white px-6 py-2 font-bold uppercase text-sm hover:bg-white hover:text-black border-2 border-black transition-all active:translate-x-0.5 active:translate-y-0.5">
-            Contact
-        </button>
-</nav>
-<main class="pt-24 min-h-screen grid-blueprint">
-<!-- Hero Section -->
-<section class="px-6 md:px-12 py-16 border-b-2 border-black bg-surface">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
-<div class="md:col-span-8">
-<span class="text-[0.6875rem] uppercase tracking-widest font-bold text-secondary mb-4 block">Structural Narrative // 01</span>
-<h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-none uppercase">
-                        Giancarlo<br/>Banchi
-                    </h1>
-</div>
-<div class="md:col-span-4">
-<p class="text-lg font-medium leading-tight border-l-4 border-black pl-6 py-2">
-                        Architect of digital ecosystems, blending trilingual cultural heritage with structural strategic thinking.
-                    </p>
-</div>
-</div>
-</section>
-<!-- Main Content Grid -->
-<section class="grid grid-cols-1 md:grid-cols-12 border-b-2 border-black">
-<!-- Left Profile Column -->
-<div class="md:col-span-4 border-r-2 border-black p-8 md:p-12 bg-white">
-<div class="sticky top-32">
-<div class="aspect-[4/5] bg-surface-container-highest mb-8 border-2 border-black group overflow-hidden">
-<img alt="Giancarlo Banchi" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500" data-alt="Professional portrait of a creative director in a black turtleneck, minimalist studio background, high contrast black and white lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9K4ZsBQYFjHLXhKu0f00b2eL3y9GwAK-B_CQkZCCODep5UXN4PBJcxdjL7ykCshw1d5LDPbzLdogz9Mefq1L0fgml13Jl8NvHDd95ytSVVZpyWoEYMZdCEcN_5ZNRp4t2kbe65i0oU_IHNqcgf3X3zJ0p9eeh5RPw-afRSdUnA4iD5JlHzesNXMpgygMUOnD-m3i_B1xpBIV6DCxxwxPm3GqwAnO75LH_2e_fq9ldL5vX7NS8tigg1H9Au9jtrgYR4HXV9-1utxs"/>
-</div>
-<div class="space-y-6">
-<div>
-<h3 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline mb-2">Linguistic Architecture</h3>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-black text-white text-[0.6875rem] font-bold uppercase">Spanish / Native</span>
-<span class="px-3 py-1 bg-black text-white text-[0.6875rem] font-bold uppercase">Italian / Academic</span>
-<span class="px-3 py-1 bg-black text-white text-[0.6875rem] font-bold uppercase">English / Professional</span>
-</div>
-</div>
-<div>
-<h3 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline mb-2">Technical Core</h3>
-<ul class="text-sm font-bold uppercase leading-relaxed">
-<li>Digital Strategy</li>
-<li>Community Management</li>
-<li>Learning Experience Design</li>
-<li>EdTech Innovation</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Experience Column -->
-<div class="md:col-span-8 bg-surface">
-<!-- Bio Section -->
-<div class="p-8 md:p-12 border-b-2 border-black">
-<h2 class="text-3xl font-black uppercase tracking-tighter mb-8 italic underline decoration-secondary-container decoration-8 underline-offset-[-2px]">Manifesto</h2>
-<div class="space-y-6 text-xl leading-relaxed max-w-2xl">
-<p>
-                            Born into a Spanish-speaking household and forged through the academic rigor of Italian higher education, my approach to digital leadership is inherently modular and multicultural. 
-                        </p>
-<p>
-                            I view digital spaces not as ephemeral platforms, but as physical structures that require a foundation of community, a framework of clear communication, and a roof of sustainable innovation.
-                        </p>
-</div>
-</div>
-<!-- Experience Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2">
-<!-- Scuola di Palo Alto -->
-<div class="p-8 border-r-2 border-b-2 border-black group hover:bg-secondary-container transition-colors duration-300">
-<div class="flex justify-between items-start mb-12">
-<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline">Current</span>
-<span class="material-symbols-outlined text-4xl">architecture</span>
-</div>
-<h3 class="text-2xl font-black uppercase tracking-tighter mb-2">Head of Digital</h3>
-<p class="text-sm font-bold uppercase mb-4">Scuola di Palo Alto</p>
-<p class="text-sm leading-relaxed opacity-80">
-                            Leading the digital transformation of Italy's premier business school. Orchestrating the intersection of high-level management training and cutting-edge digital delivery.
-                        </p>
-</div>
-<!-- IED Milano -->
-<div class="p-8 border-b-2 border-black group hover:bg-black hover:text-white transition-colors duration-300">
-<div class="flex justify-between items-start mb-12">
-<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline">Community</span>
-<span class="material-symbols-outlined text-4xl">groups</span>
-</div>
-<h3 class="text-2xl font-black uppercase tracking-tighter mb-2">Community Manager</h3>
-<p class="text-sm font-bold uppercase mb-4">IED Milano</p>
-<p class="text-sm leading-relaxed opacity-80">
-                            Fostering creative ecosystems within the Istituto Europeo di Design. Building bridges between future designers and the global creative industry.
-                        </p>
-</div>
-<!-- Cyclearn -->
-<div class="p-8 border-r-2 border-black group hover:bg-secondary transition-colors duration-300 hover:text-white">
-<div class="flex justify-between items-start mb-12">
-<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline">Venture</span>
-<span class="material-symbols-outlined text-4xl">rocket_launch</span>
-</div>
-<h3 class="text-2xl font-black uppercase tracking-tighter mb-2">Founder</h3>
-<p class="text-sm font-bold uppercase mb-4">Cyclearn</p>
-<p class="text-sm leading-relaxed opacity-80">
-                            Architecting a new paradigm in educational technology. Cyclearn was born from the need to make learning as iterative and dynamic as the industries it serves.
-                        </p>
-</div>
-<!-- Education/Background -->
-<div class="p-8 bg-surface-container-low flex flex-col justify-center border-l-0">
-<h3 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline mb-6">Structural Foundation</h3>
-<div class="space-y-4">
-<div class="border-l-2 border-black pl-4">
-<p class="text-xs font-bold uppercase text-secondary">University background</p>
-<p class="text-sm font-black uppercase">Italy</p>
-</div>
-<div class="border-l-2 border-black pl-4">
-<p class="text-xs font-bold uppercase text-secondary">Native Language</p>
-<p class="text-sm font-black uppercase">Spanish</p>
-</div>
-<div class="border-l-2 border-black pl-4">
-<p class="text-xs font-bold uppercase text-secondary">Global Fluency</p>
-<p class="text-sm font-black uppercase">English</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Bento Highlights -->
-<section class="p-6 md:p-12">
-<h2 class="text-4xl font-black uppercase tracking-tighter mb-12">Structural Methodology</h2>
-<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
-<div class="md:col-span-2 md:row-span-2 bg-black text-white p-8 border-2 border-black flex flex-col justify-between">
-<span class="text-5xl font-black opacity-20">01</span>
-<div>
-<h3 class="text-3xl font-black uppercase mb-4">Trilingual Strategic Nexus</h3>
-<p class="opacity-70 leading-relaxed">Leveraging the structural clarity of Italian, the warmth of Spanish, and the precision of English to navigate complex global markets.</p>
-</div>
-</div>
-<div class="md:col-span-2 bg-secondary-container p-8 border-2 border-black flex items-center gap-6">
-<span class="material-symbols-outlined text-6xl">grid_view</span>
-<div>
-<h3 class="text-xl font-black uppercase">Modular Thinking</h3>
-<p class="text-sm font-medium">Every project is a component-based structure designed for scalability.</p>
-</div>
-</div>
-<div class="bg-white p-6 border-2 border-black flex flex-col justify-center items-center text-center">
-<span class="text-4xl font-black">15+</span>
-<span class="text-[0.6875rem] font-bold uppercase tracking-widest">Years Experience</span>
-</div>
-<div class="bg-white p-6 border-2 border-black flex flex-col justify-center items-center text-center">
-<span class="material-symbols-outlined text-4xl mb-2">language</span>
-<span class="text-[0.6875rem] font-bold uppercase tracking-widest">Global Reach</span>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full border-t-2 border-black mt-16 bg-black text-white px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="text-lg font-bold">ARCHITEXT</div>
-<div class="font-['Space_Grotesk'] font-medium text-[0.6875rem] uppercase tracking-widest flex flex-wrap justify-center gap-8">
-<a class="opacity-70 hover:underline hover:opacity-100 decoration-2 underline-offset-4" href="#">LinkedIn</a>
-<a class="opacity-70 hover:underline hover:opacity-100 decoration-2 underline-offset-4" href="#">Email</a>
-<a class="opacity-70 hover:underline hover:opacity-100 decoration-2 underline-offset-4" href="#">Instagram</a>
-</div>
-<div class="font-['Space_Grotesk'] font-medium text-[0.6875rem] uppercase tracking-widest opacity-70 text-center md:text-right">
-            ©2024 ARCHITEXT STRUCTURAL EDITORIAL
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Giancarlo Banchi</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>About<br><em>Giancarlo</em></h1>
+  </header>
+
+  <div class="about-main">
+
+    <!-- BIO -->
+    <div class="bio-section reveal">
+      <p class="section-label">01 — Background</p>
+      <p class="bio-lead">A project manager shaped by architecture and driven by the discipline of delivery.</p>
+      <div class="bio-body">
+        <p>I began my career in architectural practice — working on the production side of complex builds before realising that the thing I was genuinely good at wasn't designing spaces, but designing the systems that made them happen.</p>
+        <p>Over the past eight years I've worked across construction, digital product, and brand — managing projects ranging from heritage renovations to SaaS platform launches. What stays constant is the method: clarity of scope, relentless stakeholder communication, and a hard commitment to outcomes over activity.</p>
+        <p>I'm based in Milan and work with clients across Italy and Western Europe. I'm fluent in Italian, English, and project planning software.</p>
+      </div>
+    </div>
+
+    <!-- FAST FACTS -->
+    <div class="facts-section reveal">
+      <p class="section-label">02 — At a Glance</p>
+      <ul class="facts-list">
+        <li class="fact-item">
+          <span class="fact-label">Based in</span>
+          <span class="fact-value">Milan, Italy</span>
+        </li>
+        <li class="fact-item">
+          <span class="fact-label">Experience</span>
+          <span class="fact-value">8+ years</span>
+        </li>
+        <li class="fact-item">
+          <span class="fact-label">Projects delivered</span>
+          <span class="fact-value">30+</span>
+        </li>
+        <li class="fact-item">
+          <span class="fact-label">Sectors</span>
+          <span class="fact-value">Architecture, Construction, Digital, Brand</span>
+        </li>
+        <li class="fact-item">
+          <span class="fact-label">Languages</span>
+          <span class="fact-value">Italian (native), English (fluent)</span>
+        </li>
+        <li class="fact-item">
+          <span class="fact-label">Certifications</span>
+          <span class="fact-value">PMP, PRINCE2 Practitioner</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <div class="philosophy-section reveal">
+      <p class="section-label">03 — Methodology</p>
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="phil-num">01</div>
+          <h3 class="phil-title">Clarity Before Velocity</h3>
+          <p class="phil-body">Speed without alignment creates rework. Every project starts with a shared understanding of scope, success criteria, and constraints — before a single task is assigned.</p>
         </div>
-</footer>
-</body></html>
+        <div class="philosophy-card">
+          <div class="phil-num">02</div>
+          <h3 class="phil-title">Proactive Over Reactive</h3>
+          <p class="phil-body">Risk management is not a document — it's a mindset. I build communication rhythms that surface blockers early, so surprises stay minor and solvable.</p>
+        </div>
+        <div class="philosophy-card">
+          <div class="phil-num">03</div>
+          <h3 class="phil-title">People Drive Outcomes</h3>
+          <p class="phil-body">Tools, frameworks, and Gantt charts are means, not ends. The actual work is building trust with teams and clients — creating conditions where people do their best work.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS & TOOLS -->
+    <div class="skills-section reveal">
+      <p class="section-label">04 — Skills & Tools</p>
+      <div class="skills-wrapper">
+        <div class="skills-group">
+          <h3>Project Management</h3>
+          <ul>
+            <li>Scope & Requirements Definition</li>
+            <li>Work Breakdown Structures</li>
+            <li>Risk & Issue Management</li>
+            <li>Budget Tracking & Forecasting</li>
+            <li>Change Control</li>
+            <li>Earned Value Analysis</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <h3>Collaboration & Process</h3>
+          <ul>
+            <li>Agile / Scrum</li>
+            <li>PRINCE2</li>
+            <li>Waterfall & Hybrid</li>
+            <li>Stakeholder Mapping</li>
+            <li>Workshop Facilitation</li>
+            <li>Vendor & Contract Management</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <h3>Tools</h3>
+          <ul>
+            <li>Notion, Confluence</li>
+            <li>Jira, Linear</li>
+            <li>MS Project, Smartsheet</li>
+            <li>Miro, FigJam</li>
+            <li>AutoCAD (working knowledge)</li>
+            <li>Slack, Teams</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section reveal">
+      <div class="cta-text">
+        <h2>Let's work together.</h2>
+        <p>Open to new projects and long-term engagements.</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-name">Giancarlo Banchi</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 100);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

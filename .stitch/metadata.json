@@ -1,0 +1,13 @@
+{
+  "projectId": null,
+  "title": "Giancarlo Banchi PM Portfolio",
+  "note": "Run Stitch to create the project and populate this file with real IDs.",
+  "deviceType": "DESKTOP",
+  "designTheme": {
+    "colorMode": "LIGHT",
+    "font": "CORMORANT_GARAMOND",
+    "customColor": "#1D3557",
+    "saturation": 1
+  },
+  "screens": {}
+}

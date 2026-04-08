@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Giancarlo Banchi</title>
+  <meta name="description" content="Contact Giancarlo Banchi for project management engagements, collaborations, and advisory conversations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #F4F1EB;
+      --ink:        #1A1917;
+      --ink-mid:    #504E4B;
+      --ink-light:  #9A958F;
+      --accent:     #1D3557;
+      --rule:       #D8D3CB;
+      --white:      #FDFCFA;
+      --hover-bg:   #EDE9E2;
+      --error:      #8B2E2E;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+
+      --nav-h: 60px;
+      --pad: clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--pad);
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--ink); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: calc(var(--nav-h) + 4rem) var(--pad) 3.5rem;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.6s 0.2s forwards;
+    }
+
+    .page-header h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .header-note {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+      max-width: 36ch;
+      line-height: 1.6;
+      padding-bottom: 0.4rem;
+      opacity: 0;
+      animation: fadeIn 0.5s 0.5s forwards;
+    }
+
+    /* ── LAYOUT ── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 0;
+      min-height: calc(100svh - var(--nav-h) - 260px);
+    }
+
+    /* ── DIRECT CONTACT ── */
+    .direct-panel {
+      padding: 4rem var(--pad);
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+      max-width: 80px;
+    }
+
+    .contact-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-link-item {
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact-link-item:first-child { border-top: 1px solid var(--rule); }
+
+    .contact-link-type {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-link-value {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: inline-block;
+      position: relative;
+    }
+
+    .contact-link-value::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .contact-link-value:hover { color: var(--accent); }
+    .contact-link-value:hover::after { width: 100%; }
+
+    .avail-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--ink-mid);
+    }
+
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4A7C59;
+      box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.25);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.25); }
+      50% { box-shadow: 0 0 0 5px rgba(74, 124, 89, 0.1); }
+    }
+
+    /* ── FORM PANEL ── */
+    .form-panel {
+      padding: 4rem var(--pad);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--rule);
+      padding: 1.4rem 0;
+      position: relative;
+    }
+
+    .field:first-of-type { border-top: 1px solid var(--rule); }
+
+    .field label {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+
+    .field:focus-within label { color: var(--accent); }
+
+    .field input,
+    .field textarea,
+    .field select {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--ink);
+      background: transparent;
+      border: none;
+      outline: none;
+      resize: none;
+      width: 100%;
+      line-height: 1.5;
+      padding: 0;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--rule);
+    }
+
+    .field textarea { min-height: 120px; }
+
+    .field select {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .field select option { background: var(--white); }
+
+    .field-arrow {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-light);
+      font-size: 0.75rem;
+      pointer-events: none;
+    }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      max-width: 30ch;
+    }
+
+    .btn {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid;
+      transition: background 0.25s, color 0.25s;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 3rem 0;
+    }
+
+    .form-success.visible { display: flex; }
+
+    .success-icon {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .success-msg {
+      font-size: 0.92rem;
+      color: var(--ink-mid);
+      max-width: 40ch;
+      line-height: 1.65;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 780px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .direct-panel { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Giancarlo Banchi</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Get in<br><em>Touch</em></h1>
+    <p class="header-note">Open to new projects, collaborations, and conversations. I typically respond within 24 hours.</p>
+  </header>
+
+  <div class="contact-layout">
+
+    <!-- DIRECT LINKS -->
+    <div class="direct-panel reveal">
+      <p class="section-label">01 — Direct</p>
+      <ul class="contact-links">
+        <li class="contact-link-item">
+          <div class="contact-link-type">Email</div>
+          <a href="mailto:hello@giancarlobanchi.com" class="contact-link-value">hello@giancarlobanchi.com</a>
+        </li>
+        <li class="contact-link-item">
+          <div class="contact-link-type">LinkedIn</div>
+          <a href="https://linkedin.com/in/giancarlobanchi" target="_blank" rel="noopener" class="contact-link-value">linkedin.com/in/giancarlobanchi</a>
+        </li>
+        <li class="contact-link-item">
+          <div class="contact-link-type">Location</div>
+          <span class="contact-link-value" style="cursor: default;">Milan, Italy</span>
+        </li>
+      </ul>
+      <div class="avail-badge">
+        <span class="avail-dot"></span>
+        Available for new projects
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-panel reveal">
+      <p class="section-label">02 — Send a Message</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Firstname Lastname" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@domain.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="type">Project Type</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="architecture">Architecture / Construction</option>
+            <option value="digital">Digital Product</option>
+            <option value="brand">Brand / Creative</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="field-arrow">▾</span>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project — scope, timeline, and what you're looking for." required></textarea>
+        </div>
+
+        <div class="form-footer">
+          <p class="form-note">This form opens your email client with the project details prefilled.</p>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+        </div>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✓</div>
+        <p class="success-msg">Your email draft is ready. Send it from your mail app, and I'll reply as soon as I can.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-name">Giancarlo Banchi</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 120);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Form submission (static-site friendly mailto fallback)
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('submitBtn');
+    const recipient = 'hello@giancarlobanchi.com';
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Opening Email...';
+
+      const formData = new FormData(form);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const type = formData.get('type');
+      const message = formData.get('message');
+      const projectTypes = {
+        architecture: 'Architecture / Construction',
+        digital: 'Digital Product',
+        brand: 'Brand / Creative',
+        other: 'Other'
+      };
+
+      const subject = encodeURIComponent(`Project inquiry from ${name}`);
+      const body = encodeURIComponent(
+        [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Project Type: ${projectTypes[type] || type}`,
+          '',
+          'Message:',
+          message
+        ].join('\n')
+      );
+
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      form.style.display = 'none';
+      success.classList.add('visible');
+    });
+  </script>
+</body>
+</html>
